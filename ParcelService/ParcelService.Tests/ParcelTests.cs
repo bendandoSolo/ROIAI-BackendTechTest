@@ -63,5 +63,26 @@ namespace ParcelService.Tests
             Assert.Equal(parcelResponse.ParcelType, expectedType);
         }
 
+        [Theory]
+        [InlineData(1, 1, 1, 50, 50, ParcelType.Heavy)]
+        [InlineData(12, 12, 12, 51, 51, ParcelType.Heavy)]
+        [InlineData(99, 12, 12, 52, 52, ParcelType.Heavy)]
+        [InlineData(99, 122, 12, 100, 100, ParcelType.Heavy)]
+        public void CalculateHeavyParcelCost(decimal width, decimal height, decimal depth, decimal weight, decimal expectedCost, ParcelType expectedType)
+        {
+            //arrange
+            Parcel parcel = new(width, height, depth, weight);
+            ParcelTypeService parcelTypeService = new();
+            ParcelCostService parcelCostService = new ParcelCostService(parcelTypeService);
+
+            //act
+            ParcelResponse parcelResponse = parcelCostService.GetParcelCost(parcel);
+
+            //assert
+            Assert.Equal(parcelResponse.DeliveryCost, expectedCost);
+            Assert.Equal(parcelResponse.ParcelType, expectedType);
+        }
+
+
     }
 }

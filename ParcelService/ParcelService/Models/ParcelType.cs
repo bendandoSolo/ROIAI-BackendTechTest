@@ -5,6 +5,8 @@
         Small,
         Medium,
         Large,
-        XL
+        XL,
+        Heavy
     }
 }
+
