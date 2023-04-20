@@ -18,6 +18,7 @@ namespace ParcelService.Extensions
             {
                 ParcelResponses = order.Parcels.Select(p => parcelCostService.GetParcelCost(p)).ToList(),
             };
+            response.AdditionalSpeedyDeliveryCost = response.DeliveryCost;
             return response;
         }
     }
