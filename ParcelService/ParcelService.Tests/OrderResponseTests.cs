@@ -10,8 +10,8 @@ namespace ParcelService.Tests
         public void OrderGetsConvertedIntoOrderResponseObject()
         {
             //arrange
-            Parcel parcel1 = new Parcel(1, 1, 1);
-            Parcel parcel2 = new Parcel(2, 2, 2);
+            Parcel parcel1 = new Parcel(1, 1, 1, 1);
+            Parcel parcel2 = new Parcel(2, 2, 2, 1);
             List<Parcel> parcels = new List<Parcel>
             {
                 parcel1,

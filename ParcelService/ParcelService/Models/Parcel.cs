@@ -4,7 +4,7 @@ namespace ParcelService.Models
 {
     public class Parcel : IHasId<string>
     {
-        public Parcel(decimal width, decimal height, decimal depth)
+        public Parcel(decimal width, decimal height, decimal depth, decimal Weight)
         {
             Id = Guid.NewGuid().ToString();
             Width = width;
@@ -15,5 +15,6 @@ namespace ParcelService.Models
         public decimal Height { get; set; }
         public decimal Width { get; set; }
         public decimal Depth { get; set; }
+        public decimal Weight { get; set; }
     }
 }
