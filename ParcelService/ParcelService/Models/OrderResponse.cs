@@ -11,7 +11,10 @@ namespace ParcelService.Models
             ParcelResponses = new List<ParcelResponse>();
         }
         public string Id { get; set; }
+
+        public decimal? AdditionalSpeedyDeliveryCost { get; set; }
         public IList<ParcelResponse> ParcelResponses { get; set; }
-        public decimal TotalCost => (ParcelResponses?.Sum(parcel => parcel.DeliveryCost) ?? 0);
+        public decimal DeliveryCost => (ParcelResponses?.Sum(parcel => parcel.DeliveryCost) ?? 0);
+        public decimal SpeedyDeliveryCost => (ParcelResponses?.Sum(parcel => parcel.DeliveryCost) ?? 0) + (AdditionalSpeedyDeliveryCost ?? 0);
     }
 }

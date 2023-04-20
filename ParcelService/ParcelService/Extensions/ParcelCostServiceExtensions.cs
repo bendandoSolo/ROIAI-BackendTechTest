@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ParcelService.Extensions
 {
-    // to allow interface to remain as small as possible, but the functionality wide
+    //extension method choosen to allow interface to remain as small as possible, but the functionality wide
     public static class ParcelCostServiceExtensions
     {
         public static OrderResponse GetOrderCost(this IParcelCostService parcelCostService, Order order)

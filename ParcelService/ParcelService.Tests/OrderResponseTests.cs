@@ -26,7 +26,8 @@ namespace ParcelService.Tests
             OrderResponse orderResponse = parcelCostService.GetOrderCost(order);
 
             Assert.Equal(2, orderResponse.ParcelResponses.Count);
-            Assert.Equal(6, orderResponse.TotalCost);
+            Assert.Equal(6, orderResponse.DeliveryCost);
+            Assert.Equal(12, orderResponse.SpeedyDeliveryCost);
         }
 
 
