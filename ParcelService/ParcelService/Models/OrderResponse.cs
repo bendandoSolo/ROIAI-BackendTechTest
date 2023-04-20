@@ -2,6 +2,7 @@
 
 namespace ParcelService.Models
 {
+    //output model
     public class OrderResponse : IHasId<string>
     {
         public OrderResponse()
