@@ -41,6 +41,14 @@ namespace ParcelService.Services
                 default:
                     throw new Exception();
             }
+
+            //any parcel costing over $50 would be cheaper as a heavy parcel
+            if (cost > 50)
+            {
+                type = ParcelType.Heavy;
+                cost = parcel.Weight > 50 ? Math.Ceiling(parcel.Weight) : 50;
+            }
+
             return new ParcelResponse(type, cost);
         }
     }
