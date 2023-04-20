@@ -14,7 +14,16 @@ namespace ParcelService.Services
         public ParcelResponse GetParcelCost(Parcel parcel)
         {
             var type = _parcelTypeService.GetParcelType(parcel);
-            decimal cost = 0;
+            // inline switch statement as of C# 8
+            var excessWeight = parcel.Weight - type switch
+            {
+                ParcelType.Small => 1,
+                ParcelType.Medium => 3,
+                ParcelType.Large => 6,
+                ParcelType.XL => 10,
+                _ => throw new Exception()
+            };
+            decimal cost = excessWeight > 0 ? Math.Ceiling(excessWeight) * 2 : 0;
             switch (type)
             {
                 case ParcelType.Small:

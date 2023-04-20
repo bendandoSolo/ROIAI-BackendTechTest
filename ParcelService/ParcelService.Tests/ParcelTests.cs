@@ -39,7 +39,7 @@ namespace ParcelService.Tests
             ParcelResponse parcelResponse = parcelCostService.GetParcelCost(parcel);
 
             //assert
-            Assert.Equal(parcelResponse.DeliveryCost, expectedCost);
+            Assert.Equal(expectedCost, parcelResponse.DeliveryCost );
             Assert.Equal(parcelResponse.ParcelType, expectedType);
         }
 
