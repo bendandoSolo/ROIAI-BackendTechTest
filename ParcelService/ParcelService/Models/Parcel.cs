@@ -1,9 +1,4 @@
 ﻿using ParcelService.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ParcelService.Models
 {
@@ -20,5 +15,7 @@ namespace ParcelService.Models
         public decimal Height { get; set; }
         public decimal Width { get; set; }
         public decimal Depth { get; set; }
+
+
     }
 }

@@ -21,4 +21,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ParcelService\ParcelService.csproj" />
+  </ItemGroup>
+
 </Project>
